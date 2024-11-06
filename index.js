@@ -10,7 +10,7 @@ import pg from 'pg';
 import loginRouters from "./Routes/LoginRouter.js";
 
 // Puertoi con el cual se haran las llamadas al servidor 
-const puerto = 8090;
+const puerto = process.env.PORT || 8090
 const app = express();
 
 app.use(cors({
