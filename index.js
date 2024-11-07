@@ -37,6 +37,10 @@ credenciales.connect((err) => {
 // Definición ruta 
 app.use("/login", loginRouters);
 
+app.get("/", (req, res) => {
+  res.send("Hola Mundo");
+});
+
 app.listen(puerto, () => {
     console.log(`El servidor se está ejecutando en el puerto ${puerto}`);
 });
