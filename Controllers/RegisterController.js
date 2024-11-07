@@ -4,7 +4,6 @@ export async function register(req, res) {
     const {nombre, apellido, edad, correo, password} = req.body;
 
     const query = `INSERT INTO usuarios (nombre, apellido, edad, correo, password) VALUES ('${nombre}', '${apellido}', ${edad}, '${correo}', '${password}')`;
-    //const values = [nombre, apellido, edad, correo, password]; 
 
     try {
         await credenciales.query(query);
