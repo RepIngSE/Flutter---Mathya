@@ -8,6 +8,7 @@ import cors from 'cors';
 // Conexión con la base de datos PostgreSQL
 import pg from 'pg';
 import loginRouters from "./Routes/LoginRouter.js";
+import registerRouters from "./Routes/RegisterRouter.js";
 
 // Puertoi con el cual se haran las llamadas al servidor 
 const puerto = process.env.PORT || 8090
@@ -36,6 +37,7 @@ credenciales.connect((err) => {
 
 // Definición ruta 
 app.use("/login", loginRouters);
+app.use("/register", registerRouters);
 
 app.listen(puerto, () => {
     console.log(`El servidor se está ejecutando en el puerto ${puerto}`);
