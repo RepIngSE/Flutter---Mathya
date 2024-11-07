@@ -22,7 +22,7 @@ export const credenciales = new pg.Client({
     host: 'aws-0-us-west-1.pooler.supabase.com',
     database: 'mathya',
     password: 'Mathya2024*',
-    port: 6543
+    port: 5432
 });
 
 // Conexión a la base de datos PostgreSQL
