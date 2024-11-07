@@ -17,7 +17,7 @@ import ResultadosRouter from './Routes/ResultadosRouter.js';
 const puerto = process.env.PORT || 8090
 const app = express();
 
-app.use(cors({origin: '*'}));
+app.use(cors({origin: '*'})); 
 app.use(express.json()); 
 
 // Credenciales de la base de datos PostgreSQL

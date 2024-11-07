@@ -23,4 +23,4 @@ export async function login(req, res) {
         console.error("Error en la consulta de login:", err);
         res.status(500).json({ error: "Error interno del servidor" });
     }
-}
+} 
