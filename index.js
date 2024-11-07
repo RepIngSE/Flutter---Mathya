@@ -13,11 +13,7 @@ import loginRouters from "./Routes/LoginRouter.js";
 const puerto = process.env.PORT || 8090
 const app = express();
 
-app.use(cors({
-    origin: '*', // Permite cualquier origen
-    methods: ['GET', 'POST', 'PUT', 'DELETE'], // Permite métodos comunes
-    allowedHeaders: ['Content-Type', 'Authorization'] // Permite ciertos encabezados
-}));
+app.use(cors({origin: '*'}));
 app.use(express.json()); 
 
 // Credenciales de la base de datos PostgreSQL
