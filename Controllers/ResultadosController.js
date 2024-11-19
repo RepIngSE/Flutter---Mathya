@@ -5,8 +5,8 @@ export async function registrarResultado(req, res) {
 
     try {
         const queryInsert = `
-            INSERT INTO resultados (id_usuario, id_modulo, id_pregunta, puntaje)
-            VALUES ($1, $2, $3, $4)
+            INSERT INTO resultados (id_usuario, id_modulo, id_pregunta, puntaje, fecha)
+            VALUES ($1, $2, $3, $4, NOW())
             RETURNING *
         `;
 
@@ -28,7 +28,7 @@ export async function obtenerResultadosPorUsuario(req, res) {
             SELECT * FROM resultados WHERE id_usuario = $1
         `;
         const { rows } = await credenciales.query(querySelect, [id_usuario]);
-
+        console.log(rows);
         res.status(200).json(rows);
     } catch (err) {
         console.error("Error al obtener resultados por usuario:", err);

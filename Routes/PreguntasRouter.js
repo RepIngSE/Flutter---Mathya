@@ -6,3 +6,4 @@ const router = express.Router();
 router.get('/modulos/:id_modulo/preguntas', getPreguntasPorModulo);
 
 export default router;
+

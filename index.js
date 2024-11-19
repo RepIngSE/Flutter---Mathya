@@ -11,9 +11,11 @@ import loginRouters from "./Routes/LoginRouter.js";
 import registerRouters from "./Routes/RegisterRouter.js";
 import PreguntasRouter from './Routes/PreguntasRouter.js';
 import ResultadosRouter from './Routes/ResultadosRouter.js';
+import getUserRouters  from "./Routes/GetUserRouter.js";
+import updateUserRouters from "./Routes/GetUserRouter.js";
 
 
-// Puertoi con el cual se haran las llamadas al servidor 
+// Puerto con el cual se haran las llamadas al servidor 
 const puerto = process.env.PORT || 8090
 const app = express();
 
@@ -43,6 +45,7 @@ app.use("/login", loginRouters);
 app.use("/register", registerRouters);
 app.use('/api', PreguntasRouter);
 app.use('/resultados', ResultadosRouter);
+app.use('/getUser', getUserRouters);
 
 app.listen(puerto, () => {
     console.log(`El servidor se está ejecutando en el puerto ${puerto}`);
